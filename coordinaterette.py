@@ -8,11 +8,13 @@ import json
 XY = './coordinate_quadratoXY.json'
 YZ = './coordinate_quadratoYZ.json'
 ZX = './coordinate_quadratoZX.json'
+Threejs = './coordinate_per_threejs.json'
 
 
 datixy = json.load(open(XY))
 datiyz = json.load(open(YZ))
 datizx = json.load(open(ZX))
+dati_threejs = json.load(open(Threejs))
 
 
 # def display_img(img):
@@ -44,10 +46,7 @@ def punto_di_intersezione_rette(xy, yz, zx):
         x2, y2, z2 = secondo["x"], secondo["y"], secondo["z"]
         terzo = zx[i]
         x3, y3, z3 = terzo["x"], terzo["y"], terzo["z"]
-        A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
-        B = np.array([0, 0, 0])
-        x = np.linalg.solve(A, B)
-        print(x)
+        print({"x": x1, "y": y2, "z": z3})
 
 
 punto_di_intersezione_rette(datixy, datiyz, datizx)
