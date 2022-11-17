@@ -9,12 +9,11 @@ XY = './coordinate_quadratoXY.json'
 YZ = './coordinate_quadratoYZ.json'
 ZX = './coordinate_quadratoZX.json'
 
-print(json.load(open("test.json")))
-'''
+
 datixy = json.load(open(XY))
 datiyz = json.load(open(YZ))
 datizx = json.load(open(ZX))
-'''
+
 
 # def display_img(img):
 #     fig = plt.figure(figsize=(6, 6))
@@ -36,20 +35,19 @@ datizx = json.load(open(ZX))
 # print(contenuto)
 
 
-# def punto_di_intersezione_rette(xy, yz, zx):
-#     # for i in xy:
-#     #     parametroa = i['x'], i['y'], i['z']
-#     # for j in yz:
-#     #     parametrob = j['x'], j['y'], j['z']
-#     # for k in zx:
-#     #     parametroc = k['x'], k['y'], k['z']
+def punto_di_intersezione_rette(xy, yz, zx):
 
-#     # A = np.array([parametroa, parametrob, parametroc])
-#     # B = np.array([0, 0, 0])
+    for i in range(len(xy)):
+        primo = xy[i]
+        x1, y1, z1 = primo["x"], primo["y"], primo["z"]
+        secondo = yz[i]
+        x2, y2, z2 = secondo["x"], secondo["y"], secondo["z"]
+        terzo = zx[i]
+        x3, y3, z3 = terzo["x"], terzo["y"], terzo["z"]
+        A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
+        B = np.array([0, 0, 0])
+        x = np.linalg.solve(A, B)
+        print(x)
 
-#     # x = np.linalg.solve(A, B)
-#     # print(x)
-#     print(xy)
 
-
-# punto_di_intersezione_rette(dati, dati, dati)
+punto_di_intersezione_rette(datixy, datiyz, datizx)
