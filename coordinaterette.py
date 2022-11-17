@@ -37,16 +37,16 @@ dati_threejs = json.load(open(Threejs))
 # print(contenuto)
 
 
-def punto_di_intersezione_rette(xy, yz, zx):
+# def punto_di_intersezione_rette(xy, yz, zx):
 
-    for i in range(len(xy)):
-        primo = xy[i]
-        x1, y1, z1 = primo["x"], primo["y"], primo["z"]
-        secondo = yz[i]
-        x2, y2, z2 = secondo["x"], secondo["y"], secondo["z"]
-        terzo = zx[i]
-        x3, y3, z3 = terzo["x"], terzo["y"], terzo["z"]
-        print({"x": x1, "y": y2, "z": z3})
+#     for i in range(len(xy)):
+#         primo = xy[i]
+#         x1, y1, z1 = primo["x"], primo["y"], primo["z"]
+#         secondo = yz[i]
+#         x2, y2, z2 = secondo["x"], secondo["y"], secondo["z"]
+#         terzo = zx[i]
+#         x3, y3, z3 = terzo["x"], terzo["y"], terzo["z"]
+#         print({"x": x1, "y": y2, "z": z3})
 
 
-punto_di_intersezione_rette(datixy, datiyz, datizx)
+# punto_di_intersezione_rette(datixy, datiyz, datizx)
