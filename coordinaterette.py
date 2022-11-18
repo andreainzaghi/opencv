@@ -49,4 +49,5 @@ dati_threejs = json.load(open(Threejs))
 #         print({"x": x1, "y": y2, "z": z3})
 
 
-# punto_di_intersezione_rette(datixy, datiyz, datizx)
+
+#prendi in input Threejs e accetta solo i valori 
