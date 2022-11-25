@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroll_list_item_list</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #body {
+      height: 90vh;
+      width: 500px;
+      border: 1px solid grey;
+
+      padding: 0.5rem;
+      overflow-y: scroll;
+    }
+
+    #listItem {
+      height: 16.5vh;
+      margin: 0.5rem 0;
+      width: calc(100% - 1rem);
+      border: 1px solid grey;
+      font-size: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: lightgray;
+      border-radius: 5px;
+      padding: 0.5rem;
+      list-style: none;
+    }
+
+    .box {
+      background: red;
+      height: 200px;
+      width: 100%;
+      margin: 800px 0 800px 0;
+    }
+    .green {
+      background: green;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div id="body"></div>
+    <script>
+      const body = document.getElementById("body");
+
+      const sticky = body.offsetTop;
+
+      let array_string = [
+        "apple",
+        "microsoft",
+        "google",
+        "facebook",
+        "amazon",
+        "tesla",
+        "netflix",
+        "nvidia",
+        "amd",
+        "intel",
+        "qualcomm",
+        "samsung",
+        "xiaomi",
+        "oppo",
+        "vivo",
+        "oneplus",
+        "asus",
+        "lenovo",
+        "huawei",
+        "motorola",
+        "nokia",
+        "sony",
+        "lg",
+        "panasonic",
+        "philips",
+        "sanyo",
+        "toshiba",
+        "sharp",
+        "mitsubishi",
+        "hitachi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+        "sharp",
+        "hitachi",
+        "mitsubishi",
+        "canon",
+        "nikon",
+        "olympus",
+        "fujifilm",
+        "leica",
+        "panasonic",
+        "samsung",
+        "sony",
+        "toshiba",
+        "lg",
+        "philips",
+      ];
+
+      function createList() {
+        const list = document.createElement("ul");
+        list.setAttribute("id", "list");
+        for (let i = 0; i < array_string.length; i++) {
+          const listItem = document.createElement("li");
+          listItem.setAttribute("id", "listItem");
+          listItem.setAttribute("class", "listItem" + i);
+          listItem.innerHTML = array_string[i];
+
+          list.appendChild(listItem);
+        }
+        body.appendChild(list);
+      }
+
+      createList();
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+</html>
